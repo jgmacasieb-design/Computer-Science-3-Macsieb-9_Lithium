@@ -1,0 +1,35 @@
+#variables
+chinese_zodiacs = [
+    "Rat",
+    "Ox",
+    "Tiger",
+    "Rabbit",
+    "Dragon",
+    "Snake",
+    "Horse",
+    "Goat",
+    "Monkey",
+    "Rooster",
+    "Dog",
+    "Pig",
+]
+
+#functions
+def get_year():
+    while True: 
+        try:
+            year = int(input("Enter birth year (cannot be bfore 1900): "))
+            if year >= 1900:
+                return year
+            else:
+                print("Cannot enter a year before 1900")
+        except:
+            print("Enter an integer or numerical year")
+def zodiac(year):
+    zodiac = (year-4) % 12
+    return(f"Your Chinese Zodiac Sign is: {chinese_zodiacs[zodiac]}")
+
+
+
+#main
+print(zodiac(get_year()))
