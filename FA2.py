@@ -10,7 +10,8 @@ class Patient:
         return self._bill_amount
     @get_bill_amount.setter
     def set_bill_amount(self,bill_amount):
-        self._bill_amount = bill_amount
+        if bill_amount > 0:
+            self._bill_amount = bill_amount
     @get_name.setter
     def set_name(self,name):
         self._name = name
